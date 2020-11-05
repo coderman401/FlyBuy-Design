@@ -13,7 +13,7 @@
         for(var i=0; i<input.length; i++) {
             if(validate(input[i]) == false){
                 showValidate(input[i]);
-                check=false;
+                check = false;
             }
         }
         if (check) {
@@ -28,6 +28,20 @@
                 console.log('register');
                 alert('ajax call or request for regster form')
             }
+
+        }
+    });
+    $(document).on('click', '.reset-password', function(e) {
+        e.preventDefault();
+        var check = true;
+        for(var i=0; i<input.length; i++) {
+            if(validate(input[i]) == false){
+                showValidate(input[i]);
+                check = false;
+            }
+        }
+        if (check) {
+            alert('process to update the password');
 
         }
     });
