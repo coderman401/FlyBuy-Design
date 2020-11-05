@@ -1,6 +1,11 @@
 
 (function ($) {
     "use strict";
+
+    $('.js-tilt').tilt({
+        scale: 1.1
+    });
+
     /*==================================================================
     [ Validate ]*/
     var input = $('.validate-input .input');
@@ -10,12 +15,7 @@
         var check = true;
         var type = $(this).data('type');
         console.log('here', type)
-        for(var i=0; i<input.length; i++) {
-            if(validate(input[i]) == false){
-                showValidate(input[i]);
-                check = false;
-            }
-        }
+        check = validateAllInput();
         if (check) {
             if (type == 'login') {
                 // submit login form
@@ -31,18 +31,22 @@
 
         }
     });
+
+    $('.send-reset-link').on('click', function(e) {
+        e.preventDefault();
+        var check = true;
+        check = validateAllInput();
+        if(check) {
+            alert ('ajax call or furtuher process for reset link');
+        }
+    });
+
     $(document).on('click', '.reset-password', function(e) {
         e.preventDefault();
         var check = true;
-        for(var i=0; i<input.length; i++) {
-            if(validate(input[i]) == false){
-                showValidate(input[i]);
-                check = false;
-            }
-        }
+        check = validateAllInput();
         if (check) {
             alert('process to update the password');
-
         }
     });
 
@@ -52,6 +56,17 @@
            hideValidate(this);
         });
     });
+
+    function validateAllInput() {
+        var check = true;
+        for(var i=0; i<input.length; i++) {
+            if(validate(input[i]) == false){
+                showValidate(input[i]);
+                check = false;
+            }
+        }
+        return check;
+    }
 
     function validate (input) {
         if($(input).attr('type') == 'email' || $(input).attr('name') == 'email') {
@@ -63,7 +78,8 @@
                 $(input).closest('.wrap-input').attr('data-validate', 'Confirm Password requried.')
                 return false;
             }
-            if ($(input).val() != '' && $(input).closest('.register-form').find('.password').val() != $(input).val()) {
+            if ($(input).val() != '' && $(input).closest('.validvalidate-form').find('.password').val() != $(input).val()) {
+                console.log('here')
                 $(input).closest('.wrap-input').attr('data-validate', 'Password does not match.')
                 return false;
             }
