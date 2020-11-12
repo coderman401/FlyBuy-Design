@@ -55,7 +55,7 @@ a:focus {
     outline: none !important;
 }
 
-a:hover {
+a:not(.btn):hover {
     text-decoration: none;
     color: #00bcd4;
 }
@@ -190,7 +190,9 @@ iframe {
     padding: 32px;
 }
 
-
+.login-pic{
+    margin-right: 32px;
+}
 .login-form-title {
     font-family: Poppins-Bold;
     font-size: 24px;
@@ -309,9 +311,10 @@ iframe {
     line-height: 1.5;
     color: #fff;
     text-transform: uppercase;
-
+    border: none;
+    box-shadow: none;
     width: 100%;
-    height: 50px;
+    height: 40px;
     border-radius: 4px;
     background: #00bcd4;
     display: -webkit-box;
@@ -328,8 +331,30 @@ iframe {
     -moz-transition: all 0.4s;
     transition: all 0.4s;
 }
-
-.login-form-btn:hover {
+.btn-primary {
+    /* font-family: Montserrat-Bold; */
+    font-size: 14px;
+    line-height: 1.5;
+    color: #fff;
+    border: none;
+    box-shadow: none;
+    /* width: 100%; */
+    height: 40px;
+    border-radius: 4px;
+    background: #00bcd4;
+    /* display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+.login-form-btn:hover, .btn-primary:hover {
     background: #333333;
 }
 
