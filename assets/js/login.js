@@ -5,7 +5,7 @@
     /*==================================================================
     [ Validate ]*/
     var input = $('.validate-input .input');
-
+    var form, url;
     $(document).on('click', '.submit-form', function(e) {
         e.preventDefault();
         var check = true;
@@ -15,15 +15,15 @@
         if (check) {
             if (type == 'login') {
                 // submit login form
-                window.location = "../index.html";
+                form = $('#login-form');
+                url = "{{ url_for('view.user_login') }}";
             }
-            
             if (type == 'register') {
                 // submit register form
-                console.log('register');
-                alert('ajax call or request for regster form')
+                form = $('#register-form');
+                url = "{{ url_for('view.registration') }}";
             }
-
+            submitAjax(url, form);
         }
     });
 
@@ -32,7 +32,9 @@
         var check = true;
         check = validateAllInput();
         if(check) {
-            alert ('ajax call or furtuher process for reset link');
+            var form = $('#forget-form');
+            var url = "{{ url_for('view.forgot_password') }}";
+            submitAjax(url, form);
         }
     });
 
@@ -41,7 +43,9 @@
         var check = true;
         check = validateAllInput();
         if (check) {
-            alert('process to update the password');
+            var url = "{{ url_for('view.forgot_password') }}";
+            var form = $('#reset-form');
+            submitAjax(url, form);
         }
     });
 
@@ -96,6 +100,26 @@
         var thisAlert = $(input).parent();
 
         $(thisAlert).removeClass('alert-validate');
+    }
+
+    function submitAjax(url, form) {
+        $.ajax({
+            // headers: {
+            //     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            // },
+            type: "POST",
+            url: url,
+            dataType: "json",
+            data: form.serialize(),
+            success: function(data) {
+                console.log(data);
+                // here is process after ajax success
+            },
+            error : function(data) {
+                console.log(data);
+                // here is the process of after ajax fail
+            }
+        });
     }
 
 })(jQuery);
