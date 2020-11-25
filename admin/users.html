@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../assets/images/icons/favicon.ico">
+    <!-- Site Title -->
+    <title>FlyBuy</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
+    <!-- Fonts for icons -->
+    <link href="../assets/css/all-fontawesome.min.css" rel="stylesheet">
+    <!-- bootstrap -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Plugins CSS -->
+    <link href="../assets/css/plugins/owl.carousel.min.css" rel="stylesheet">
+    <link href="../assets/css/plugins/magnific-popup.css" rel="stylesheet">
+    <link href="../assets/css/plugins/spacing-and-height.css" rel="stylesheet">
+    <link href="../assets/css/plugins/dropkick.css" rel="stylesheet">
+    <!-- Style CSS -->
+    <link href="../assets/css/theme-modules.css" rel="stylesheet">
+    
+    <link href="../assets/css/custom.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="admin-content" class="bg-color-gray">
+        <!-- Header -->
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-md navbar-light">
+            <div class="container-fluid mx-0 mx-md-20px mx-lg-60px">
+                <a class="navbar-brand" href="index.html">
+                    <img class="etcodes-normal-logo" src="../assets/images/logo_1.png" width="85" height="22" alt="Logo">
+                    <img class="etcodes-mobile-logo" src="../assets/images/logo_1.png" width="65" height="22" alt="Logo">
+                </a>
+                <button class="navbar-toggler hamburger-menu-btn" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span>toggle menu</span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="categories.html">Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="products.html">Products</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="users.html">Users</a>
+                        </li>
+                        <li class="nav-item login-btn">
+                            <a href="./login/index.html" class="btn btn-fill"> Logout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- End Header -->
+        <!-- main -->
+        <div class="page-container container scene-main scene-main--fade_In">
+            <div class="container admin-wrapper bg-color-white p-30px">
+                <div class="section-title">
+                    <h5>Users list</h5>
+                    <div class="button-outer">
+                        <a type="button" href="add-user.html" class="btn btn-lime">Add User</a>
+                    </div>
+                </div>
+                <input type="text" id="myInput" placeholder="Search for">
+                <div class="table-responsive">
+                    <table class="table admin-table table-bordered table-striped">
+                        <tr>
+                            <th>Sr. no.</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                        <tbody id="list">
+                        <tr>
+                            <td>1</td>
+                            <td>kishanpanchal@gmail.com</td>
+                            <td>Admin</td>
+                            <td>Active</td>
+                            <td style="width:140px;">
+                                <div class="button-outer" style="width:140px;">
+                                    <a type="button" href="#" class="btn btn-lime btn-xs">Edit</a>
+                                    <!-- <button type="button" id="delete_user" data-toggle="modal" data-id="1" data-target="#user_delete" class="delete btn btn-lime btn-xs">Delete</button> -->
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>arpitravl@gmail.com</td>
+                            <td>Admin</td>
+                            <td>Active</td>
+                            <td style="width:140px;">
+                                <div class="button-outer" style="width:140px;">
+                                    <a type="button" href="#" class="btn btn-lime btn-xs">Edit</a>
+                                    <button type="button" id="delete_user" data-toggle="modal" data-id="1" data-target="#user_delete" class="delete btn btn-lime btn-xs">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>vishalpatel@gmail.com</td>
+                            <td>User</td>
+                            <td>Active</td>
+                            <td style="width:140px;">
+                                <div class="button-outer" style="width:140px;">
+                                    <a type="button" href="#" class="btn btn-lime btn-xs">Edit</a>
+                                    <button type="button" id="delete_user" data-toggle="modal" data-id="1" data-target="#user_delete" class="delete btn btn-lime btn-xs">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>panchalKishan12@gmail.com</td>
+                            <td>Seller</td>
+                            <td>Active</td>
+                            <td style="width:140px;">
+                                <div class="button-outer" style="width:140px;">
+                                    <a type="button" href="#" class="btn btn-lime btn-xs">Edit</a>
+                                    <button type="button" id="delete_user" data-toggle="modal" data-id="1" data-target="#user_delete" class="delete btn btn-lime btn-xs">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <nav class="pagination_holder">
+                    <ul class="pagination">
+
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span>
+                                    &lt;
+                                </span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </li>
+                        <li class="page-item active">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span>
+                                    &gt;
+                                </span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- End main -->
+    </div>
+
+<!-- Delete Modal Start -->
+<div class="modal fade" id="user_delete">
+    <div class="modal-dialog modal-sm delete-modal">
+        <div class="modal-content">  
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h6 class="modal-title">Delete User</h6>
+            </div>  
+            <!-- Modal body -->
+            <div class="modal-body">
+                <p>Do you really want to delete?</p>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <a type="button" id="delete_modal_user" data-id="" class="btn btn-lime btn-xs" >Yes</a>
+                <button type="submit" class="btn btn-lime btn-xs" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Delete Modal End -->
+
+    <!-- ================================================== -->
+    <!-- Placed js files at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../assets/js/plugins/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../assets/js/plugins/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="../assets/js/plugins/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="../assets/js/plugins/dropkick.min.js"></script>
+    <script type="text/javascript" src="../assets/js/main.js"></script>
+</body>
+
+</html>

@@ -524,55 +524,6 @@
     }
   }
 
-  /* --------------------------------------------
-      Twitter Feeds
-    --------------------------------------------- */
-  function twitterfeeds_int() {
-    var $twitterfeed_id = $("#twitterfeed");
-    if ($twitterfeed_id.length) {
-      var config8 = {
-        profile: {
-          screenName: "ThemeForest"
-        },
-        dataOnly: true,
-        maxTweets: 2,
-        customCallback: populateTpl
-      };
-
-      twitterFetcher.fetch(config8);
-
-      function populateTpl(tweets) {
-        var element = document.getElementById("twitterfeed");
-
-        var html = '<ul class="list-unstyled tweets-simple-list">';
-        for (var i = 0, lgth = tweets.length; i < lgth; i++) {
-          var tweetObject = tweets[i];
-          html +=
-            '<li class="media">' +
-            '<div class="mr-3"><i class="fab fa-twitter" aria-hidden="true"></i></div>' +
-            '<div class="tweet-content">' +
-            tweetObject.tweet +
-            "</div>" +
-            "</li>";
-        }
-        html += "</ul>";
-        element.innerHTML = html;
-      }
-    }
-  }
-  /* --------------------------------------------
-      Element Animate effect
-    --------------------------------------------- */
-
-  function et_animate_item() {
-    AOS.init({
-      offset: 100,
-      duration: 600,
-      easing: "linear",
-      once: true
-    });
-  }
-
   /* ---------------------------------------------
      Scripts initialization
      --------------------------------------------- */
@@ -595,9 +546,6 @@
     countToNumber();
     et_countdown();
     et_nav_menu();
-    et_animate_item();
-    Instafeed_int();
-    twitterfeeds_int();
     sticky_header();
   });
 
@@ -610,4 +558,39 @@
       page_height_classes_creator();
     })
     .trigger("resize");
+
+    $(document).ready(function() {
+      // dropkick
+      $(".custom-dropdown").dropkick({
+        mobile: true
+      });
+      $("#orderby").dropkick({
+        mobile: true
+      });
+      
+    });
+
+  /**
+   * Admin Functionality Start
+   */
+
+  /**
+    * Search Filters for listing
+    */
+  
+  $(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#list tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+
+  // admin functionality ends
+
 })(jQuery);
+
+
+
+

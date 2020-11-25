@@ -1,3 +1,9 @@
+#admin-content {
+    height: 100vh;
+}
+ol, ul {
+    list-style: none;
+}
 .navbar  {
     position: sticky;
     top: 0;
@@ -32,23 +38,6 @@
     min-height: 40px;
     height: 40px;
 }
-.btn-primary {
-    font-size: 14px;
-    line-height: 1.5;
-    color: #fff;
-    border: none;
-    box-shadow: none;
-    height: 40px;
-    border-radius: 4px;
-    background: #00bcd4;
-    -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    transition: all 0.4s;
-}
-.btn-primary:hover {
-    background: #333333;
-}
 
 .badge {
     position: absolute;
@@ -74,7 +63,6 @@
     display: none;
 }
 
-
 @media screen and (max-width: 768px) {
     .cart-link .nav-link.mobile {
       display: block;
@@ -83,3 +71,4 @@
       display: none;
     }
 }
+
