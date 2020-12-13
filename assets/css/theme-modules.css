@@ -5395,3 +5395,13 @@ background: #00bcd4;color: #fff;font-weight: bold;
   border: 1px solid #ddd;
   margin-bottom: 12px;
 }
+
+.cart-list-item .item-detail {
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+.cart-list-item .item-detail .single-product-des {
+  width: 100%;
+  padding-left: 30px;
+}
